@@ -3,8 +3,8 @@
 This repository provides the source code for the IOCs used by WEISS in the
 [public live demo](https://demo.weiss-controls.org/).
 
-The [demonstration OPIs repository](https://github.com/weiss-controls/weiss-demo-opis) interacts
-with the PVs provided by these IOCs.
+The corresponding demonstration OPIs can be found in the live demo itself or in the
+[weiss-demo-opis repository](https://github.com/weiss-controls/weiss-demo-opis).
 
 ---
 
