@@ -1,0 +1,32 @@
+services:
+  # GenericIO IOC
+  genericIO-ioc:
+    image: weiss-demo-genericio-ioc
+    container_name: genericIO-ioc
+    restart: always
+    network_mode: host
+    build:
+      context: ./genericIO
+      dockerfile: ../docker/Dockerfile
+      target: static-link
+      labels:
+        org.opencontainers.image.source: https://github.com/weiss-controls/weiss-demo-iocs
+      args:
+        REPONAME: genericIO
+        RUNDIR: /opt/genericIO/iocBoot/iocgenericIO
+
+  # MotorSim IOC
+  motorSim-ioc:
+    image: weiss-demo-motorsim-ioc
+    container_name: motorSim-ioc
+    restart: always
+    network_mode: host
+    build:
+      context: ./motorSim
+      dockerfile: ../docker/Dockerfile
+      target: static-link
+      labels:
+        org.opencontainers.image.source: https://github.com/weiss-controls/weiss-demo-iocs
+      args:
+        REPONAME: motorSim
+        RUNDIR: /opt/motorSim/iocBoot/iocMotorSim
