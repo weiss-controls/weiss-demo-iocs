@@ -20,6 +20,13 @@ record(motor,"$(P)$(M)")
 	field(TWV,  "1")
 }
 
+record(compress, "$(P)$(M)RBVArr-Mon") {
+  field(DESC, "$(M) Position History")
+  field(ALG, "Circular Buffer")
+  field(INP, "$(P)$(M).RBV CP")
+  field(NSAM, "100")
+}
+
 # Motor direction for this axis
 record(longout,"$(P)$(M)Direction") {
     field(DESC, "$(M) direction")
