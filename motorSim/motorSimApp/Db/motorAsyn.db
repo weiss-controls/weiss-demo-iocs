@@ -23,8 +23,9 @@ record(motor,"$(P)$(M)")
 record(compress, "$(P)$(M)RBVArr-Mon") {
   field(DESC, "$(M) Position History")
   field(ALG, "Circular Buffer")
-  field(INP, "$(P)$(M).RBV CP")
-  field(NSAM, "100")
+  field(INP, "$(P)$(M).RBV")
+  field(NSAM, "500")
+  field(SCAN, ".1 second")
 }
 
 # Motor direction for this axis
