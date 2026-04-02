@@ -57,3 +57,26 @@ record(ao,"$(P)$(M)Resolution") {
     field(OUT,  "@asyn($(PORT),$(ADDR))MOTOR_REC_RESOLUTION")
     field(PREC, "$(PREC)")
 }
+
+## Creates random movement for illustration - can be disabled
+record(bo, "$(P)$(M)RandomEnable-Cmd") {
+    field(DESC, "Enables random movement of the motor")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(VAL, "1")
+    field(PINI, "YES")
+}
+
+
+record(calcout, "$(P)$(M)RandomSP") {
+    field(DESC, "Sends a random target pos if enabled")
+    field(INPA, "$(P)$(M).DMOV")
+    # bit of a hack with NINT to reduce decimal places of output...
+    field(CALC, "A ? NINT(RNDM*100*1E5)/1E5 : 0")
+    field(PREC, "5")
+    field(OOPT, "When Non-zero")
+    field(OUT, "$(P)$(M) PP")
+    field(SCAN, "10 second")
+    field(DISV, "0")
+    field(SDIS, "$(P)$(M)RandomEnable-Cmd CP")
+}
