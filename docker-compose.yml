@@ -30,3 +30,22 @@ services:
       args:
         REPONAME: motorSim
         RUNDIR: /opt/motorSim/iocBoot/iocMotorSim
+
+  # ADSim IOC
+  ADSim-ioc:
+    image: weiss-demo-adsim-ioc
+    container_name: ADSim-ioc
+    restart: always
+    network_mode: host
+    tty: true
+    build:
+      context: ./ADSim
+      dockerfile: ../docker/Dockerfile
+      target: dynamic-link
+      labels:
+        org.opencontainers.image.source: https://github.com/weiss-controls/weiss-demo-iocs
+      args:
+        REPONAME: adsim
+        RUNTIME_PACKAGES: libtiff-dev libxml2-dev
+        RUNDIR: /opt/adsim/iocBoot/iocSimDetector/
+        ENTRYPOINT: ./st.cmd
