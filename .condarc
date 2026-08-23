@@ -1,0 +1,4 @@
+channels:
+  - https://artifactory.esss.lu.se/artifactory/api/conda/ess-conda-local
+  - conda-forge
+channel_priority: strict

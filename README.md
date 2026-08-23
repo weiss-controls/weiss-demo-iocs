@@ -10,17 +10,18 @@ The corresponding demonstration OPIs can be found in the live demo itself or in 
 
 ## Build and run
 
-All IOCs can be built and started either manually (standard EPICS build procedure), or by using
-Docker containers (recommended). In this section you will find instructions for the latter.
+All IOCs are built on top of e3 framework, see [e3 pages](https://e3.pages.ess.eu/).  
+If you are not familiar with e3, you can still run all of them by using the docker images provided
+in this repository.
 
-> All docker images are built using [epics-in-docker](https://github.com/cnpem/epics-in-docker).
+Below are the instructions on how to build and run the IOCs using Docker.
 
 1. If not already done, [install Docker Engine](https://docs.docker.com/engine/install/).
 
-2. Clone the repository recursively (required to get epics-in-docker):
+2. Clone the repository:
 
 ```bash
-git clone --recursive https://github.com/weiss-controls/weiss-demo-iocs.git
+git clone https://github.com/weiss-controls/weiss-demo-iocs.git
 ```
 
 2. Build and start the IOCs
@@ -39,11 +40,4 @@ docker compose up -d motorSim-ioc
 
 If building the images for the first time, it may take a few minutes to complete.
 
-To access the IOC Shell, use the following command:
-
-```bash
-docker exec -ti <container> nc -U ioc.sock
-```
-
-Where `<container>` is the name of the container running the IOC you want to access. You can find
-the container names by running `docker ps`.
+A method to access the IOC shell will be provided soon (likely via procServ).

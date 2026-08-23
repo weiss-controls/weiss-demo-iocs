@@ -1,37 +1,24 @@
 services:
-  # GenericIO IOC
   genericIO-ioc:
     image: weiss-demo-genericio-ioc
     container_name: genericIO-ioc
     restart: always
     network_mode: host
+    tty: true
     build:
-      context: ./genericIO
-      dockerfile: ../docker/Dockerfile
-      target: static-link
-      labels:
-        org.opencontainers.image.source: https://github.com/weiss-controls/weiss-demo-iocs
       args:
-        REPONAME: genericIO
-        RUNDIR: /opt/genericIO/iocBoot/iocgenericIO
+        IOC_DIR: genericIO
 
-  # MotorSim IOC
   motorSim-ioc:
     image: weiss-demo-motorsim-ioc
     container_name: motorSim-ioc
     restart: always
     network_mode: host
+    tty: true
     build:
-      context: ./motorSim
-      dockerfile: ../docker/Dockerfile
-      target: static-link
-      labels:
-        org.opencontainers.image.source: https://github.com/weiss-controls/weiss-demo-iocs
       args:
-        REPONAME: motorSim
-        RUNDIR: /opt/motorSim/iocBoot/iocMotorSim
+        IOC_DIR: motorSim
 
-  # ADSim IOC
   ADSim-ioc:
     image: weiss-demo-adsim-ioc
     container_name: ADSim-ioc
@@ -39,13 +26,5 @@ services:
     network_mode: host
     tty: true
     build:
-      context: ./ADSim
-      dockerfile: ../docker/Dockerfile
-      target: dynamic-link
-      labels:
-        org.opencontainers.image.source: https://github.com/weiss-controls/weiss-demo-iocs
       args:
-        REPONAME: adsim
-        RUNTIME_PACKAGES: libtiff-dev libxml2-dev
-        RUNDIR: /opt/adsim/iocBoot/iocSimDetector/
-        ENTRYPOINT: ./st.cmd
+        IOC_DIR: ADSim

@@ -1,0 +1,12 @@
+file "Db/motorAsyn.db"
+{
+pattern {P,            N,  M,          DTYP,         PORT,        ADDR,  DESC,          EGU,   DIR,   VELO,   VBAS,  ACCL,  BDST,  BVEL,  BACC,  MRES,  PREC,  DHLM,  DLLM,  INIT}
+        {"$(PREFIX)",  1,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  0,     "motor $(N)",  "mm",  "Pos", ".5",   .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  2,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  1,     "motor $(N)",  "mm",  "Pos", "1",    .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  3,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  2,     "motor $(N)",  "mm",  "Pos", "1.5",  .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  4,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  3,     "motor $(N)",  "mm",  "Pos", "2",    .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  5,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  4,     "motor $(N)",  "mm",  "Pos", "2.5",  .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  6,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  5,     "motor $(N)",  "mm",  "Pos", "3",    .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  7,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  6,     "motor $(N)",  "mm",  "Pos", "3.5",  .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+        {"$(PREFIX)",  8,  "Mtr$(N)",  "asynMotor",  "$(MPORT)",  7,     "motor $(N)",  "mm",  "Pos", "4",    .1,    .2,    0,     1,     .2,    0.01,  3,     100,   -100,  ""}
+}
